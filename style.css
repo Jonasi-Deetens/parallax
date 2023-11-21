@@ -26,11 +26,49 @@ main {
 .gojo-picture {
     bottom: -100px;
     left: 50%;
+    z-index: 10;
     transform: translateX(-50%);
 }
 
 .orb-picture {
     left: calc(50% - 93px);
     bottom: 450px;
+    z-index: 20;
     transform-origin: bottom;
+    filter: drop-shadow(5px 5px 30px pink);
+}
+
+.rocks-one-picture {
+    bottom: 20px;
+    left: 50px;
+}
+
+.rocks-two-picture {
+    bottom: 60px;
+    left: 290px;
+}
+
+.rocks-three-picture {
+    bottom: 20px;
+    left: 520px;
+}
+
+.rocks-four-picture {
+    bottom: 10px;
+    left: 780px;
+}
+
+.rocks-five-picture {
+    bottom: 40px;
+    left: 950px;
+}
+
+.rocks-six-picture {
+    bottom: 30px;
+    left: 1150px;
+}
+
+.rocks-seven-picture {
+    bottom: 50px;
+    left: 1300px;
 }
