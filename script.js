@@ -27,7 +27,7 @@ const updateParallax = () => {
         rocksFourPicture.style.transform = "translateY(" + (scrollPos - (scrollPos/10 * 20)) + "px)";
         rocksFivePicture.style.transform = "translateY(" + (scrollPos - (scrollPos/10 * 35)) + "px)";
         rocksSixPicture.style.transform = "translateY(" + (scrollPos - (scrollPos/10 * 15)) + "px)";
-        rocksSevenPicture.style.transform = "translateY(" + (scrollPos - (scrollPos/10 * 22)) + "px)";
+        rocksSevenPicture.style.transform = "translateY(" + (scrollPos - (scrollPos/10 * 28)) + "px)";
     }
 };
 window.onload = init;

@@ -35,11 +35,11 @@ main {
     bottom: 450px;
     z-index: 20;
     transform-origin: bottom;
-    filter: drop-shadow(5px 5px 30px pink);
+    filter: drop-shadow(0px 0px 30px rgb(213, 38, 181));
 }
 
 .rocks-one-picture {
-    bottom: 20px;
+    bottom: -50px;
     left: 50px;
 }
 
@@ -49,8 +49,9 @@ main {
 }
 
 .rocks-three-picture {
-    bottom: 20px;
+    bottom: -100px;
     left: 520px;
+    z-index: 30;
 }
 
 .rocks-four-picture {
@@ -59,7 +60,7 @@ main {
 }
 
 .rocks-five-picture {
-    bottom: 40px;
+    bottom: -40px;
     left: 950px;
 }
 
@@ -69,6 +70,6 @@ main {
 }
 
 .rocks-seven-picture {
-    bottom: 50px;
+    bottom: -50px;
     left: 1300px;
 }
