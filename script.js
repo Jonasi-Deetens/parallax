@@ -17,13 +17,15 @@ const updateParallax = () => {
     const rocksSixPicture = document.querySelector(".rocks-six-picture");
     const rocksSevenPicture = document.querySelector(".rocks-seven-picture");
 
-    domainPicture.style.borderRadius = "100%";
     if (scrollPos <= maxScroll) {
-        domainPicture.style.width = (scrollPos % maxScroll-1) / 2 + "%";
-        domainPicture.style.height = (scrollPos % maxScroll-1) / 2 + "%";
-        if (scrollPos >= 160) {
+        if (scrollPos >= 150) {
             domainPicture.style.width = "100vmax";
-            domainPicture.style.borderRadius = (100 * ((maxScroll - scrollPos) / 40)) + "%";
+            domainPicture.style.height = "100vmax";
+            if (scrollPos <= 180) domainPicture.style.borderRadius = (50 * ((180 - scrollPos) / 30)) + "%";
+        } else {
+            domainPicture.style.borderRadius = "100%";
+            domainPicture.style.width = (scrollPos / 3) * 2 + "vmax";
+            domainPicture.style.height = (scrollPos / 3) * 2 + "vmax";
         }
 
         gojoPicture.style.transform = "translate(-50%," + (scrollPos + (scrollPos/10 * 2)) + "px)";
@@ -40,7 +42,7 @@ const updateParallax = () => {
         rocksSevenPicture.style.transform = "translateY(" + (scrollPos - (scrollPos/10 * 28)) + "px)";
     } else {
         domainPicture.style.width = "100vmax";
-        domainPicture.style.height = "100vmin";
+        domainPicture.style.height = "100vmax";
         domainPicture.style.borderRadius = "0%";
     }
 };
