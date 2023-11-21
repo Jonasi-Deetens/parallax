@@ -7,20 +7,28 @@ body {
     padding: 0;   
 }
 
+header {
+    background-color: rgb(29, 29, 29);
+}
+
 main {
-    background-color: darkslategrey;
+    background-color: rgb(13, 14, 14);
     height: 100svh;
 }
 
 #parallax-container {
     position: relative;
-    background-color: black;
     height: 100svh;
     overflow: hidden;
 }
 
 #parallax-container img {
     position: absolute;
+}
+
+.domain-picture {
+    transform: scale(0);
+    border-radius: 100%;
 }
 
 .gojo-picture {
@@ -39,12 +47,12 @@ main {
 }
 
 .rocks-one-picture {
-    bottom: -50px;
+    bottom: -100px;
     left: 50px;
 }
 
 .rocks-two-picture {
-    bottom: 60px;
+    bottom: -60px;
     left: 290px;
 }
 
@@ -55,21 +63,21 @@ main {
 }
 
 .rocks-four-picture {
-    bottom: 10px;
+    bottom: -60px;
     left: 780px;
 }
 
 .rocks-five-picture {
-    bottom: -40px;
+    bottom: -60px;
     left: 950px;
 }
 
 .rocks-six-picture {
-    bottom: 30px;
+    bottom: -100px;
     left: 1150px;
 }
 
 .rocks-seven-picture {
-    bottom: -50px;
+    bottom: -100px;
     left: 1300px;
 }
