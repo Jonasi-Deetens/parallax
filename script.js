@@ -18,20 +18,14 @@ const updateParallax = () => {
     const rocksSevenPicture = document.querySelector(".rocks-seven-picture");
 
     if (scrollPos <= maxScroll) {
-        if (scrollPos >= 150) {
-            domainPicture.style.width = "100vmax";
-            domainPicture.style.height = "100vmax";
-            if (scrollPos <= 180) domainPicture.style.borderRadius = (50 * ((180 - scrollPos) / 30)) + "%";
-        } else {
-            domainPicture.style.borderRadius = "100%";
-            domainPicture.style.width = (scrollPos / 3) * 2 + "vmax";
-            domainPicture.style.height = (scrollPos / 3) * 2 + "vmax";
-        }
+        domainPicture.style.width = (scrollPos / 4) + "vmax";
+        domainPicture.style.height = (scrollPos / 4) + "vmax";
+        domainPicture.style.transform = "translate(-50%," + (scrollPos + (scrollPos/10 * 9)) + "px)";
 
         gojoPicture.style.transform = "translate(-50%," + (scrollPos + (scrollPos/10 * 2)) + "px)";
 
-        orbPicture.style.transform = "translateY(" + (scrollPos + (scrollPos/10 * 8)) + "px)";
-        orbPicture.style.transform += "scale(" + (scrollPos/10 + 1) + ")";
+        //orbPicture.style.transform = "translateY(" + (scrollPos + (scrollPos/10 * 7)) + "px)";
+        //orbPicture.style.transform += "scale(" + (scrollPos/20) + ")";
 
         rocksOnePicture.style.transform = "translateY(" + (scrollPos - (scrollPos/10 * 30)) + "px)";
         rocksTwoPicture.style.transform = "translateY(" + (scrollPos - (scrollPos/10 * 19)) + "px)";
@@ -41,9 +35,8 @@ const updateParallax = () => {
         rocksSixPicture.style.transform = "translateY(" + (scrollPos - (scrollPos/10 * 19)) + "px)";
         rocksSevenPicture.style.transform = "translateY(" + (scrollPos - (scrollPos/10 * 28)) + "px)";
     } else {
-        domainPicture.style.width = "100vmax";
-        domainPicture.style.height = "100vmax";
-        domainPicture.style.borderRadius = "0%";
+        domainPicture.style.width = "50vmax";
+        domainPicture.style.height = "50vmax";
     }
 };
 window.onload = init;
