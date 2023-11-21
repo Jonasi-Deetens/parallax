@@ -6,7 +6,7 @@ const updateParallax = () => {
     const maxScroll = 200;
     const scrollPos = window.scrollY;
 
-    const domainPicture = document.querySelector(".domain-picture");
+    const domainPicture = document.querySelector(".domain-background");
     const gojoPicture = document.querySelector(".gojo-picture");
     const orbPicture = document.querySelector(".orb-picture");
     const rocksOnePicture = document.querySelector(".rocks-one-picture");
@@ -17,11 +17,14 @@ const updateParallax = () => {
     const rocksSixPicture = document.querySelector(".rocks-six-picture");
     const rocksSevenPicture = document.querySelector(".rocks-seven-picture");
 
+    domainPicture.style.borderRadius = "100%";
     if (scrollPos <= maxScroll) {
-        domainPicture.style.transform = "scale(" + (scrollPos/(maxScroll/1.25)) + ")";
-        if (scrollPos >= 160) domainPicture.style.borderRadius = (maxScroll-scrollPos) * 2.5 + "%"
-        else domainPicture.style.borderRadius = "100%";
-      //  domainPicture.style.borderTopRightRadius = (100 - ((scrollPos % maxScroll) / 2)) + "%";
+        domainPicture.style.width = (scrollPos % maxScroll-1) / 2 + "%";
+        domainPicture.style.height = (scrollPos % maxScroll-1) / 2 + "%";
+        if (scrollPos >= 160) {
+            domainPicture.style.width = "100vmax";
+            domainPicture.style.borderRadius = (100 * ((maxScroll - scrollPos) / 40)) + "%";
+        }
 
         gojoPicture.style.transform = "translate(-50%," + (scrollPos + (scrollPos/10 * 2)) + "px)";
 
@@ -36,7 +39,8 @@ const updateParallax = () => {
         rocksSixPicture.style.transform = "translateY(" + (scrollPos - (scrollPos/10 * 19)) + "px)";
         rocksSevenPicture.style.transform = "translateY(" + (scrollPos - (scrollPos/10 * 28)) + "px)";
     } else {
-        domainPicture.style.transform = "scale(1.25)";
+        domainPicture.style.width = "100vmax";
+        domainPicture.style.height = "100vmin";
         domainPicture.style.borderRadius = "0%";
     }
 };
