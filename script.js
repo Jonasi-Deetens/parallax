@@ -10,8 +10,8 @@ const updateParallax = () => {
 
     if (scrollPos < 200) {
         gojoPicture.style.transform = "translate(-50%," + scrollPos + "px)";
-        orbPicture.style.transform = "translateY(" + scrollPos + "px)";
-        orbPicture.style.transform += "scale(" + (scrollPos/50 + 1) + ")";
+        orbPicture.style.transform = "translateY(" + (scrollPos + (scrollPos/10 * 5)) + "px)";
+        orbPicture.style.transform += "scale(" + (scrollPos/10 + 1) + ")";
     }
 };
 window.onload = init;
