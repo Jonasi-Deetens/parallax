@@ -32,8 +32,8 @@ const updateParallax = () => {
 
         gojoPicture.style.transform = "translate(-50%," + (scrollPos + (scrollPos/10 * 2)) + "px)";
 
-        orbPicture.style.transform = "translateY(" + (scrollPos + (scrollPos/10 * 7)) + "px)";
-        orbPicture.style.transform += "scale(" + (scrollPos/20) + ")";
+        orbPicture.style.transform = "translateY(" + (scrollPos + (scrollPos/20 * 7)) + "px)";
+        orbPicture.style.transform += "scale(" + (scrollPos/40) + ")";
 
         rocksOnePicture.style.transform = "translateY(" + (scrollPos - (scrollPos/10 * 30)) + "px)";
         rocksTwoPicture.style.transform = "translateY(" + (scrollPos - (scrollPos/10 * 19)) + "px)";
