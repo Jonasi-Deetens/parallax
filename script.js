@@ -10,7 +10,7 @@ const init = () => {
 };
 
 const updateParallax = () => {
-    const maxScroll = 200;
+    const maxScroll = 400;
     const scrollPos = window.scrollY;
     if (scrollPos <= maxScroll) {
         updatePositions(scrollPos, maxScroll);
@@ -26,6 +26,7 @@ const updatePositions = (scrollPos, maxScroll) => {
     const gojoPicture = document.querySelector(".gojo-picture");
     const orbPicture = document.querySelector(".orb-picture");
 
+    const overlay = document.querySelector(".overlay");
     const rocksZeroPicture = document.querySelector(".rocks-zero-picture");
     const rocksOnePicture = document.querySelector(".rocks-one-picture");
     const rocksTwoPicture = document.querySelector(".rocks-two-picture");
@@ -37,37 +38,44 @@ const updatePositions = (scrollPos, maxScroll) => {
 
     domainPicture.style.width = (scrollPos / (maxScroll / 100)) + "%";
 
-    if (scrollPos < 10) gojoPicture.style.filter = "drop-shadow(0 0 1px black)";
-    else gojoPicture.style.filter = "drop-shadow(0 0 8px purple)";
+    if (scrollPos < 15) {
+        gojoPicture.style.filter = "drop-shadow(0 0 1px black)";
+        overlay.style.filter = "drop-shadow(0 0 1px black)";
+    }
+    else  {
+        gojoPicture.style.filter = "drop-shadow(0 0 8px purple)";
+        overlay.style.filter = "drop-shadow(0px 0px 2px rgb(255, 0, 208))";
+    }
     gojoPicture.style.transform = "translateX(-50%)";
-    gojoPicture.style.transform += "scale(" + (1 - (scrollPos/300)) + ")";
-    orbPicture.style.transform = "translateY(" + ((scrollPos - (scrollPos / 2)) + (scrollPos/20 * 7)) + "px)";
-    orbPicture.style.transform += "translateX(" + (scrollPos / 4) + "px)";
-    orbPicture.style.transform += "scale(" + (scrollPos/80) + ")";
+    gojoPicture.style.transform += "scale(" + (1 - (scrollPos/(maxScroll*3/2))) + ")";
+
+    orbPicture.style.transform = "translateY(" + (170 * (scrollPos / maxScroll)) + "px)";
+    orbPicture.style.transform += "translateX(" + (scrollPos /(maxScroll/50)) + "px)";
+    orbPicture.style.transform += "scale(" + (scrollPos/(maxScroll/1.5)) + ")";
 
     rocksZeroPicture.style.transform = "translateX(-50%)";
-    rocksZeroPicture.style.transform += "translateY(" + (scrollPos - (scrollPos/10 * 30)) + "px)";
+    rocksZeroPicture.style.transform += "translateY(" + (-410 * (scrollPos / maxScroll)) + "px)";
     rocksZeroPicture.style.transform += "scale(" + (scrollPos/maxScroll) + ")";
 
-    rocksOnePicture.style.transform = "translateY(" + (scrollPos - (scrollPos/10 * 30)) + "px)";
+    rocksOnePicture.style.transform = "translateY(" + (-500 * (scrollPos / maxScroll)) + "px)";
     rocksOnePicture.style.transform += "scale(" + (0.5+(scrollPos/maxScroll)) + ")";
 
-    rocksTwoPicture.style.transform = "translateY(" + (scrollPos - (scrollPos/10 * 19)) + "px)";
+    rocksTwoPicture.style.transform = "translateY(" + (-280 * (scrollPos / maxScroll)) + "px)";
     rocksTwoPicture.style.transform += "scale(" + (1.5-(scrollPos/maxScroll)) + ")";
     
-    rocksThreePicture.style.transform = "translateY(" + (scrollPos - (scrollPos/10 * 32)) + "px)";
+    rocksThreePicture.style.transform = "translateY(" + (-540 * (scrollPos / maxScroll)) + "px)";
     rocksThreePicture.style.transform += "scale(" + (0.5+(scrollPos/maxScroll)) + ")";
     
-    rocksFourPicture.style.transform = "translateY(" + (scrollPos - (scrollPos/10 * 25)) + "px)";
+    rocksFourPicture.style.transform = "translateY(" + (-400 * (scrollPos / maxScroll)) + "px)";
     rocksFourPicture.style.transform += "scale(" + (1.5-(scrollPos/maxScroll)) + ")";
     
-    rocksFivePicture.style.transform = "translateY(" + (scrollPos - (scrollPos/10 * 35)) + "px)";
+    rocksFivePicture.style.transform = "translateY(" + (-600 * (scrollPos / maxScroll)) + "px)";
     rocksFivePicture.style.transform += "scale(" + (1.9-(scrollPos/maxScroll)) + ")";
     
-    rocksSixPicture.style.transform = "translateY(" + (scrollPos - (scrollPos/10 * 19)) + "px)";
+    rocksSixPicture.style.transform = "translateY(" + (-280 * (scrollPos / maxScroll)) + "px)";
     rocksSixPicture.style.transform += "scale(" + (0.5+(scrollPos/maxScroll)) + ")";
     
-    rocksSevenPicture.style.transform = "translateY(" + (scrollPos - (scrollPos/10 * 28)) + "px)";
+    rocksSevenPicture.style.transform = "translateY(" + (-460 * (scrollPos / maxScroll)) + "px)";
     rocksSevenPicture.style.transform += "scale(" + (1.5-(scrollPos/maxScroll)) + ")";
         
 };

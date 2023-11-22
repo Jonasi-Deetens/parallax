@@ -4,11 +4,12 @@
 
 body {
     margin: 0;
-    padding: 0;   
+    padding: 0; 
+    color: white;  
 }
 
 main {
-    background-color: rgb(29, 29, 29);
+    background-color: rgb(24, 23, 23);
     height: 100svh;
 }
 
@@ -31,6 +32,19 @@ main {
 
 #parallax-container img {
     position: absolute;
+}
+
+.center {
+    width: 50%;
+    padding: 20px;
+    margin: auto;
+    text-align: center;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    z-index: 50;
 }
 
 .domain-background {
