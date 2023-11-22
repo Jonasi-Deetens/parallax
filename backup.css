@@ -9,6 +9,7 @@ body {
 
 main {
     background-color: rgb(29, 29, 29);
+    height: 100svh;
 }
 
 #unmute-button {
